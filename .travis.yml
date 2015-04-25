@@ -1,5 +1,6 @@
 language: ruby
 install: gem install bundler
+script: "bundle && bundle exec rake"
 rvm:
   - 2.0.0
   - 2.1.4
