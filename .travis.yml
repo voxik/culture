@@ -1,0 +1,22 @@
+language: ruby
+install: gem install bundler
+rvm:
+  - 2.0.0
+  - 2.1.4
+  - 2.2.2
+  - ruby-head
+  - jruby
+  - jruby-head
+  - rbx-2
+
+matrix:
+  allow_failures:
+    - rvm: ruby-head
+    - rvm: jruby
+    - rvm: jruby-head
+    - rvm: rbx-2
+
+notifications:
+  irc: "irc.freenode.org#celluloid"
+
+sudo: false
