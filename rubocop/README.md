@@ -13,7 +13,7 @@ To automate the process, mind to integrate celluloid/culture as GIT submodule of
 Include culture/rupocop/rubocop.yml into the .rubocop.yml within the root of your project:
 ```yml
 inherit_from:
-  culture/rubocop/rubocop.yml
+  - culture/rubocop/rubocop.yml
 
 ```
 
