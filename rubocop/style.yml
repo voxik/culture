@@ -22,6 +22,7 @@ Style/SpaceAroundEqualsInParameterDefault:
 
 Style/SpaceInsideBlockBraces:
   Enabled: false
+  
 Style/AccessModifierIndentation:
   Enabled: false
 
