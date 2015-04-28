@@ -8,7 +8,7 @@ To automate the process, integrate `celluloid/culture` as a GIT submodule of you
 
 ##### Add celluloid/culture as GIT submodule:
 ```sh
-  git submodule add http://github.com:celluloid/culture.git
+  git submodule add http://github.com/celluloid/culture.git
 ```
 
 ##### Include `culture/rupocop/rubocop.yml` in the `.rubocop.yml` in the root of your project:
