@@ -30,7 +30,8 @@ gem 'rubocop', require: false
 
 # Hints
 It's possible to use rubocop for autocorrection of minor problems. Always verify these changes.
-To do that run it with -a option:
+
+To do that, run it with -a option:
 ```sh
-bundler exec rubocop -a
+bundle exec rubocop -a
 ```
