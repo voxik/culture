@@ -1,30 +1,32 @@
 # About
 [RuboCop](https://github.com/bbatsov/rubocop) is a ruby static code analyzer.
 It's more than just a lint. It verifies the code against ruby best practices and performs code correctness analysis.
-Celluloid community doesn't always agree with all rubocop default policies and thereby provides rubocop configuration file that overrides its default behaviour.
+Celluloid culture doesn't always agree with all rubocop default policies and so we provide a rubocop configuration file that overrides its default behavior.
 
 # Integration
-To automate the process, mind to integrate celluloid/culture as GIT submodule of your project and include culture/rupocop/.rubocop.yml into your default rubocop config.
+To automate the process, integrate `celluloid/culture` as a GIT submodule of your project, and include `culture/rupocop/.rubocop.yml` in your default rubocop config.
 
- - add celluloid/culture as GIT submodule:
+##### Add celluloid/culture as GIT submodule:
 ```sh
   git submodule add git@github.com:celluloid/culture.git
 ```
-Include culture/rupocop/rubocop.yml into the .rubocop.yml within the root of your project:
+
+##### Include `culture/rupocop/rubocop.yml` in the `.rubocop.yml` in the root of your project:
 ```yml
 inherit_from:
   - culture/rubocop/rubocop.yml
-
 ```
 
-You are free to override other rules and specify the paths that rubocop should bypass though it's not recommended.
+You are free to override other rules and specify the paths that rubocop should bypass, but that is not recommended.
 
 # How to add rubocop to your project
-- add rubocop gem into the bundler Gemfile:
+
+##### Add rubocop gem into the bundler `Gemfile`:
 ```ruby
 gem 'rubocop', require: false
 ```
-- add 'rubocop' target into your Rakefile
+
+##### Add a 'rubocop' target in your `Rakefile`
 
 # Hints
 It's possible to use rubocop for autocorrection of minor problems. Always verify these changes.
