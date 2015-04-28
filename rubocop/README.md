@@ -29,9 +29,11 @@ gem 'rubocop', require: false
 ##### Add a 'rubocop' target in your `Rakefile`
 
 # Hints
-It's possible to use rubocop for autocorrection of minor problems. Always verify these changes.
+It's possible to use rubocop for autocorrection of minor problems.
 
-To do that, run it with -a option:
+Always verify these changes by running: `bundle exec rubocop`
+
+And once you are ready to auto-corret the issues you are shown, run it with the `-a` option:
 ```sh
 bundle exec rubocop -a
 ```
