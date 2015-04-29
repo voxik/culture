@@ -44,11 +44,11 @@ module Celluloid
       end
     end
 
-    def bundler(bundler)
+    def gemfile(dsl)
       Gems.load do |name, spec|
         req = spec["bundler"] || {}
         req = req.each_with_object({}) { |(k, v), o| o[k.to_sym] = v }
-        bundler.gem(name, req)
+        dsl.gem(name, req)
       end
     end
   end
