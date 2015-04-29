@@ -3,10 +3,10 @@ require "yaml"
 module Celluloid
   module Sync
     def self.gems(loader)
-      case loader.class
-      when Gem::Specification
+      case loader.class.name
+      when "Gem::Specification"
         Gems.gemspec(loader)
-      when Bundler::Dsl
+      when "Bundler::Dsl"
         Gems.bundler(loader)
       else
         puts "Fell through: #{loader}"
