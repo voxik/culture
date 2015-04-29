@@ -35,7 +35,7 @@ module Celluloid
       @dependencies = YAML.load_file(GEMS) if File.exist?(GEMS)
     end
 
-    unless @dependencies.is_a? Hash && @dependencies.any?
+    unless @dependencies.is_a?(Hash) && @dependencies.any?
       fail "Celluloid cannot find its dependencies."
     end
 
