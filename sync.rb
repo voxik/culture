@@ -5,6 +5,8 @@ module Celluloid
       @@gem_path ||= File.expand_path("../../", __FILE__)
       $:.push( @@gem_path)
 
+      # TODO: This will likely need to be done differently if INSIDE a cut gem.
+
       puts "Synchronizing Celluloid Culture //"
       @@update = `cd #{@@gem_path}/culture; git pull`
       @@updated = !@@update.include?("up-to-date")
@@ -20,6 +22,7 @@ module Celluloid
         @@updated
       end
       if @@updated
+        puts "Was updated."
         def update!
           if @@updated
             puts "Celluloid Culture was updated."
@@ -28,7 +31,7 @@ module Celluloid
           end
         end
       else
-        
+        puts "Was not updated."  
         require(@@required.last)
         GEM = Celluloid::Gems::SELF unless defined? GEM
 
