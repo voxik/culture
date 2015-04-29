@@ -3,12 +3,12 @@ Celluloid::Culture
 [![Build Status](https://travis-ci.org/celluloid/culture.svg)](https://travis-ci.org/celluloid/culture)
 
 ### Please see...
-* [Issues for discussion.](/celluloid/culture/issues)
-* Information about [Celluloid::Sync](SYNC.md)
-* Information about [RuboCop](rubocop/README.md)
+* Important [issues for discussion](/celluloid/culture/issues).
+* Information about [Celluloid::Sync](SYNC.md).
+* Information about [RuboCop](rubocop/README.md).
 
 
-# Integration
+## Integration
 To include `celluloid/culture` and its many splendors to any `Celluloid` gem, add it as a GIT submodule of your project.
 
 ##### Add celluloid/culture as GIT submodule:
