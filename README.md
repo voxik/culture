@@ -19,4 +19,4 @@ git submodule add http://github.com/celluloid/culture.git
 Make sure `http://` is used and no other method of inclusion. CI needs it to be `http://`
 
 ### Then what?
-Once you've done that, read up on [Celluloid::Sync](SYNC.md) and [RuboCop](rubocop/README.md)
+Once you've done that, read up on [Celluloid::Sync](SYNC.md) and [RuboCop](rubocop/README.md).
