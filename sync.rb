@@ -13,6 +13,17 @@ module Celluloid
         "#{@@gem_path}/culture/sync",
         "#{@@gem_path}/culture/gems/loader"
       ]
+      puts @@update
+    end
+
+    class << self
+      def update!
+        if @@updated
+          puts "Celluloid Culture was updated."
+          @@required.each { |rb| load(rb) }
+          puts "Reloaded Culture::Sync itself."
+        end
+      end
     end
 
     unless @@updated
@@ -25,14 +36,6 @@ module Celluloid
       end
 
       class << self
-
-        def update!
-          if @@updated
-            puts "Celluloid Culture was updated."
-            @@required.each { |rb| load(rb) }
-            puts "Reloaded Culture::Sync itself."
-          end
-        end
 
         def gems(loader)
           case loader.class
