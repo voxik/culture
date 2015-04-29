@@ -7,7 +7,7 @@ module Celluloid
       when "Gem::Specification"
         Gems.gemspec(loader)
       when "Bundler::Dsl"
-        Gems.bundler(loader)
+        Gems.gemfile(loader)
       else
         puts "Fell through: #{loader}"
       end
