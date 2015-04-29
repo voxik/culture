@@ -15,6 +15,8 @@ module Celluloid
         "#{@@gem_path}/culture/sync.rb",
         "#{@@gem_path}/culture/gems/loader"
       ]
+    else
+      @updated = false
     end
 
     class << self
