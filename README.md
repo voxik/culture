@@ -16,6 +16,6 @@ To include `celluloid/culture` and its many splendors to any `Celluloid` gem, ad
 git submodule add http://github.com/celluloid/culture.git
 ```
 
-Make extra sure `http://` is used and no other method of inclusion, as CI needs it to be `http://`
+Make sure `http://` is used and no other method of inclusion, as CI needs it to be `http://`
 
 Once you've done that, read up on [Celluloid::Sync](SYNC.md) and [RuboCop](rubocop/README.md)
