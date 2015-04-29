@@ -8,8 +8,6 @@ module Celluloid
         Gems.gemspec(loader)
       when "Bundler::Dsl"
         Gems.gemfile(loader)
-      else
-        puts "Fell through: #{loader}"
       end
     end
   end
