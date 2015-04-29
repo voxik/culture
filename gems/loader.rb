@@ -41,6 +41,7 @@ module Celluloid
       @dependencies.each do |name, spec|
         next if name == SELF
         spec ||= []
+        puts "spec: #{spec}"
         yield name, spec
       end
     end
