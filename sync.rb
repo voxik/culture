@@ -7,10 +7,10 @@ module Celluloid
 
       puts "Synchronizing Celluloid Culture //"
       @@update = %x[cd #{@@gem_path}/culture; git pull]
-      @@updated = @@update.include?("up-to-date")
+      @@updated = !@@update.include?("up-to-date")
 
       @@required ||= [
-        "#{@@gem_path}/culture/sync",
+        "#{@@gem_path}/culture/sync.rb",
         "#{@@gem_path}/culture/gems/loader"
       ]
       puts @@update
