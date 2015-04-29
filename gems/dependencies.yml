@@ -1,0 +1,21 @@
+celluloid:
+  bundler:
+    github: celluloid/celluloid
+    branch: 0.17.0-prerelease
+celluloid-extras:
+  bundler:
+    github: celluloid/celluloid-extras
+celluloid-supervision:
+  bundler:
+    github: celluloid/celluloid-supervision
+celluloid-pool:
+  bundler:
+    github: celluloid/celluloid-pool
+celluloid-fsm:
+  bundler:
+    github: celluloid/celluloid-fsm
+timers:
+  gemspec:
+     - ~> 4.0.0
+  bundler:
+    github: celluloid/timers
