@@ -32,31 +32,8 @@ timers:
     github: celluloid/timers
 ```
 
-# Modification of gemspec
-It's only required to change few lines:
-```ruby
-$:.push File.expand_path("../", __FILE__)
-require 'culture/gems/loader'
+# Modification of gemspec and Gemfile
 
-Gem::Specification.new do |gem|
-  gem.name         = 'celluloid-xxx'
+The injection of dependencies into `gemspec` and `Gemfile` is handled by `Celluloid::Sync.gems()`, which routes to either `Celluloid::Gems.gemspec` or `Celluloid::Gems.gemfile` depending on what is passed to it.
 
-  # credentials and non-celluloid dependencies naturally go here
-
-  # include celluloid gems
-  Celluloid::Gems.gemspec gem
-end
-
-```
-
-# Modification of Gemfile
-Same as in gemspec you have to add only few bits:
-```ruby
-$:.push File.expand_path("../", __FILE__)
-require 'culture/gems/loader'
-
-# below any calls to `gemspec`
-Celluloid::Gems.bundler self
-
-# other gems listed below
-```
+This is discussed in [SYNC.md](../SYNC.md)
