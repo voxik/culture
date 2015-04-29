@@ -41,18 +41,14 @@ module Celluloid
       fail "Celluloid cannot find its dependencies."
     end
 
-    puts "Celluloid dependencies prepared."
-
     def loader
       @dependencies.each{ |name, spec|
         next if name == SELF
-        puts "Updating #{name}?"
         yield name, spec
       }
     end
 
     def gemspec(gem)
-      puts "Priming #{SELF}.gemspec."
       loader { |name, spec|
         req = spec["gemspec"] || []
         gem.add_dependency(name, *req)
@@ -60,7 +56,6 @@ module Celluloid
     end
 
     def gemfile(dsl)
-      puts "Priming Gemfile."
       loader { |name, spec|
         req = spec["bundler"] || {}
         req = req.each_with_object({}) { |(k, v), o| o[k.to_sym] = v }
