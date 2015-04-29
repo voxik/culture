@@ -34,7 +34,8 @@ gems:
 # Modification of gemspec
 It's only required to change few lines:
 ```ruby
-require_relative 'culture/gems/gems'
+$:.push File.expand_path("../", __FILE__)
+require 'culture/gems/gems'
 
 Gem::Specification.new do |gem|
   gem.name         = 'celluloid-xxx'
@@ -50,7 +51,8 @@ end
 # Modification of Gemfile
 Same as in gemspec you have to add only few bits:
 ```ruby
-require_relative 'culture/gems/gems'
+$:.push File.expand_path("../", __FILE__)
+require 'culture/gems/gems'
 
 Celluloid::Gems::bundler self
 
