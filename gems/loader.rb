@@ -33,6 +33,7 @@ module Celluloid
     def load
       @@dependencies.each do |name, spec|
         next if name == SELF
+        puts "Updating #{name}?"
         yield name, spec
       end
     end
