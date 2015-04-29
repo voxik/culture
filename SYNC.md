@@ -54,5 +54,5 @@ require File.expand_path("../culture/sync", __FILE__)
 # below any other gems
 # ...
 
-Celluloid::Gems.bundler(self)
+Celluloid::Gems.gemfile(self)
 ```
