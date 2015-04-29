@@ -12,7 +12,7 @@ module Celluloid
       require(version)
     end
 
-    puts "#{[LIB_PATH,lib]}"
+    puts "#{[LIB_PATH,version]}"
 
     class << self
 
