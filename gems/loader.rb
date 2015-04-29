@@ -17,7 +17,7 @@ module Celluloid
     end
 
     # Avoid gems loading themselves.
-    def self? name
+    def self?(name)
       puts "self? #{name} #{__FILE__}"
     end
 
