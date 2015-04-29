@@ -18,14 +18,14 @@ module Celluloid
     class << self
 
       def gems(loader)
-        case loader.is_a?
+        case loader.class
         when Gem::Specification
           Gems.gemspec(loader)
         else
           puts "#{loader.class}"
         end
       end
-      
+
     end
   end
 end
