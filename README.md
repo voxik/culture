@@ -9,7 +9,7 @@ Celluloid::Culture
 
 
 ## Integration
-To include `celluloid/culture` and its many splendors to any `Celluloid` gem, add it as a GIT submodule of your project.
+To include `celluloid/culture` and its many splendors to a gem, add it as a sub-module of a repository.
 
 ##### Add celluloid/culture as GIT submodule:
 ```sh
