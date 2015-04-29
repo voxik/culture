@@ -19,3 +19,4 @@ timers:
      - ~> 4.0.0
   bundler:
     github: celluloid/timers
+rubocop:
