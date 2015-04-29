@@ -12,14 +12,14 @@ module Celluloid
 
     @@require ||= [ "#{@@gem_path}/culture/gems/loader" ]
 
-    GEM = Celluloid::Gems::SELF unless defined? GEM
-    LIB_PATH = File.expand_path("../../lib/#{GEM.split("-").join("/")}", __FILE__)
-
     if File.exist?(version="#{LIB_PATH}/version.rb")
       @@require << version
     end
 
     @@require.each { |rb| require(rb) }
+
+    GEM = Celluloid::Gems::SELF unless defined? GEM
+    LIB_PATH = File.expand_path("../../lib/#{GEM.split("-").join("/")}", __FILE__)
 
   end
 end
