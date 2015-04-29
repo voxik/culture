@@ -12,14 +12,15 @@ module Celluloid
       require(version)
     end
 
-    puts "#{[LIB_PATH,version]}"
+    puts "Synchronizing Celluloid Culture //"
+    puts `cd #{@@gem_path}/culture; git pull`
 
     class << self
 
       def gems(loader)
 
         puts "loader? #{loader.class}"
-        puts "git pull #{@gem_path}/culture"
+        puts "git pull #{@@gem_path}/culture"
 
       end
     end
