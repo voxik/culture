@@ -18,11 +18,14 @@ module Celluloid
     class << self
 
       def gems(loader)
-
-        puts "loader? #{loader.class}"
-        puts "git pull #{@@gem_path}/culture"
-
+        case loader.is_a?
+        when Gem::Specification
+          Gems.gemspec(loader)
+        else
+          puts "#{loader.class}"
+        end
       end
+      
     end
   end
 end
