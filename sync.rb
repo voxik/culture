@@ -21,8 +21,8 @@ module Celluloid
         case loader.class
         when Gem::Specification
           Gems.gemspec(loader)
-        else
-          puts "#{loader.class}"
+        when Bundler::Dsl
+          Gems.bundler(loader)
         end
       end
 
