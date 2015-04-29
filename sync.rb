@@ -6,7 +6,7 @@ module Celluloid
 
     puts "Synchronizing Celluloid Culture //"
     @@update = `cd #{@@gem_path}/culture; git pull`
-    @@updated = @update.include?("up-to-date")
+    @@updated = @@update.include?("up-to-date")
     @@required ||= ["#{@@gem_path}/culture/sync"]
     
     require(@@required << File.expand_path("../gems/loader", __FILE__))
@@ -21,7 +21,9 @@ module Celluloid
 
       def update!
         if @@updated
+          puts "Celluloid Culture was updated."
           @@required.each { |rb| load(rb) }
+          puts "Reloaded Culture::Sync itself."
         end
       end
 
