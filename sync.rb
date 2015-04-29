@@ -4,7 +4,12 @@ module Celluloid
     @@gem_path ||= File.expand_path("../../", __FILE__)
     $:.push( @@gem_path)
 
-    require(File.expand_path("../gems/loader", __FILE__))
+    puts "Synchronizing Celluloid Culture //"
+    @@update = `cd #{@@gem_path}/culture; git pull`
+    @@updated = @update.include?("up-to-date")
+    @@required ||= ["#{@@gem_path}/culture/sync"]
+    
+    require(@@required << File.expand_path("../gems/loader", __FILE__))
     GEM = Celluloid::Gems::SELF unless defined? GEM
 
     LIB_PATH = File.expand_path("../../lib/#{GEM.split("-").join("/")}", __FILE__)
@@ -12,10 +17,13 @@ module Celluloid
       require(version)
     end
 
-    puts "Synchronizing Celluloid Culture //"
-    puts `cd #{@@gem_path}/culture; git pull`
-
     class << self
+
+      def update!
+        if @@updated
+          @@required.each { |rb| load(rb) }
+        end
+      end
 
       def gems(loader)
         case loader.class
@@ -29,3 +37,5 @@ module Celluloid
     end
   end
 end
+
+Celluloid::Sync.update!
