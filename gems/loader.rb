@@ -26,6 +26,8 @@ module Celluloid
       end
     end
 
+    puts "dependencies: #{@@dependencies}"
+
     unless @@dependencies.is_a? Hash and @@dependencies.any?
       raise "Celluloid cannot find its dependencies."
     end
