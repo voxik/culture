@@ -37,7 +37,7 @@ Gem::Specification.new do |gem|
   # Keep in mind, the VERSION constant of this gem ought to be loaded.
   # ...
   # ...
-  Celluloid::Gems.gemspec(gem)
+  Celluloid::Sync.gems(gem)
 end
 
 ```
@@ -54,5 +54,5 @@ require File.expand_path("../culture/sync", __FILE__)
 # below any other gems
 # ...
 
-Celluloid::Gems.gemfile(self)
+Celluloid::Sync.gems(self)
 ```
