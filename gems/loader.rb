@@ -40,6 +40,7 @@ module Celluloid
     def loader
       @dependencies.each do |name, spec|
         next if name == SELF
+        spec ||= []
         yield name, spec
       end
     end
