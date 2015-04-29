@@ -1,6 +1,16 @@
 require "yaml"
 
 module Celluloid
+  module Sync
+    def self.gems(loader)
+      case loader.class
+      when Gem::Specification
+        Gems.gemspec(loader)
+      when Bundler::Dsl
+        Gems.bundler(loader)
+      end
+    end
+  end
   module Gems
     extend self
 
@@ -28,6 +38,8 @@ module Celluloid
     unless @@dependencies.is_a? Hash and @@dependencies.any?
       raise "Celluloid cannot find its dependencies."
     end
+
+    puts "Celluloid gem dependencies prepared."
 
     def loader
       @@dependencies.each{ |name, spec|
