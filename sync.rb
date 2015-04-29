@@ -27,8 +27,8 @@ module Celluloid
             puts "Reloaded Culture::Sync itself:\n#{@@update}"
           end
         end
-      end
       else
+        
         require(@@required.last)
         GEM = Celluloid::Gems::SELF unless defined? GEM
 
@@ -37,18 +37,15 @@ module Celluloid
           require(version)
         end
 
-        class << self
-
-          def gems(loader)
-            case loader.class
-            when Gem::Specification
-              Gems.gemspec(loader)
-            when Bundler::Dsl
-              Gems.bundler(loader)
-            end
+        def gems(loader)
+          case loader.class
+          when Gem::Specification
+            Gems.gemspec(loader)
+          when Bundler::Dsl
+            Gems.bundler(loader)
           end
-
         end
+
       end
     end
   end
