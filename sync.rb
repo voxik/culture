@@ -7,7 +7,7 @@ module Celluloid
     require(File.expand_path("../gems/loader", __FILE__))
     GEM = Celluloid::Gems::SELF unless defined? GEM
 
-    LIB_PATH = File.expand_path("../lib/#{GEM.split("-").join("/")}", __FILE__)
+    LIB_PATH = File.expand_path("../../lib/#{GEM.split("-").join("/")}", __FILE__)
     if File.exist?(version="#{LIB_PATH}/version.rb")
       require(version)
     end
