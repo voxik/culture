@@ -32,8 +32,8 @@ timers:
     github: celluloid/timers
 ```
 
-# Modification of gemspec and Gemfile
+# Modification of `gemspec` and `Gemfile`
 
-The injection of dependencies into `gemspec` and `Gemfile` is handled by `Celluloid::Sync.gems()`, which routes to either `Celluloid::Gems.gemspec` or `Celluloid::Gems.gemfile` depending on what is passed to it.
+The injection of dependencies into `gemspec` and `Gemfile` is handled by `Celluloid::Sync.gems()`, which routes to either `Celluloid::Gems.gemspec` or `Celluloid::Gems.gemfile` depending on what is passed to it:
 
-This is discussed in [SYNC.md](../SYNC.md)
+* Discussed in [SYNC.md](../SYNC.md#how-do-you-install-it-in-gemfile-and-gemspec-then)
