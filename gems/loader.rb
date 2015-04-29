@@ -32,35 +32,33 @@ module Celluloid
     # /TODO
 
     unless @dependencies ||= nil
-      @dependencies = if File.exist?(GEMS)
-        YAML.load_file(GEMS)
-      end
+      @dependencies = YAML.load_file(GEMS) if File.exist?(GEMS)
     end
 
-    unless @dependencies.is_a? Hash and @dependencies.any?
+    unless @dependencies.is_a? Hash && @dependencies.any?
       fail "Celluloid cannot find its dependencies."
     end
 
     def loader
-      @dependencies.each{ |name, spec|
+      @dependencies.each do |name, spec|
         next if name == SELF
         yield name, spec
-      }
+      end
     end
 
     def gemspec(gem)
-      loader { |name, spec|
+      loader do |name, spec|
         req = spec["gemspec"] || []
         gem.add_dependency(name, *req)
-      }
+      end
     end
 
     def gemfile(dsl)
-      loader { |name, spec|
+      loader do |name, spec|
         req = spec["bundler"] || {}
         req = req.each_with_object({}) { |(k, v), o| o[k.to_sym] = v }
         dsl.gem(name, req)
-      }
+      end
     end
   end
 end
