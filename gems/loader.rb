@@ -29,20 +29,20 @@ module Celluloid
     end
     # /TODO
 
-    unless @@dependencies ||= nil
-      @@dependencies = if File.exist?(GEMS)
+    unless @dependencies ||= nil
+      @dependencies = if File.exist?(GEMS)
         YAML.load_file(GEMS)
       end
     end
 
-    unless @@dependencies.is_a? Hash and @@dependencies.any?
-      raise "Celluloid cannot find its dependencies."
+    unless @dependencies.is_a? Hash and @dependencies.any?
+      fail "Celluloid cannot find its dependencies."
     end
 
-    puts "Celluloid gem dependencies prepared."
+    puts "Celluloid dependencies prepared."
 
     def loader
-      @@dependencies.each{ |name, spec|
+      @dependencies.each{ |name, spec|
         next if name == SELF
         puts "Updating #{name}?"
         yield name, spec
