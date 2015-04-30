@@ -38,6 +38,7 @@ module Celluloid
     end
 
     def gemspec(gem)
+      puts "run gemspec"
       loader do |name, spec|
         req = spec["gemspec"] || []
         if spec["dependency"] == "runtime"
@@ -49,15 +50,18 @@ module Celluloid
     end
 
     def gemfile(dsl)
-      puts "deps: #{dsl.dependencies}"
       loader do |name, spec|
+        params = [ name ]
         req = spec["bundler"] || {}
         req = req.each_with_object({}) { |(k, v), o| o[k.to_sym] = v }
+        params << spec["version"] if spec["version"]
+        params << req
         if current = dsl.dependencies.find { |d| d.name == name }
           puts "removing: #{current}"
+          puts 
           dsl.dependencies.delete(current)
         end
-        dsl.gem(name, req)
+        dsl.gem(*params)
         current = dsl.dependencies.find { |d| d.name == name }
         puts "added: #{current}"
       end
