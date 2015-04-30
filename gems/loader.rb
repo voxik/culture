@@ -57,6 +57,8 @@ module Celluloid
           dsl.dependencies.delete(current)
         end
         dsl.gem(name, req)
+        current = dsl.dependencies.find { |d| d.name == name }
+        puts "added: #{current}"
       end
     end
 
