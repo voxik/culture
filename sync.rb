@@ -5,7 +5,7 @@ module Celluloid
 
     # TODO: This will likely need to be done differently if INSIDE a cut gem.
 
-    puts "Calling: #{Process.argv0}"
+    puts "Calling: #{$0}"
     puts "Synchronizing Celluloid Culture //"
     `cd #{GEM_PATH}/culture; git pull origin master`
 
