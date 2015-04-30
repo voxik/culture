@@ -52,7 +52,7 @@ module Celluloid
       loader do |name, spec|
         req = spec["bundler"] || {}
         req = req.each_with_object({}) { |(k, v), o| o[k.to_sym] = v }
-        if current = dsl.dependencies.find { |d| d.name == dep.name }
+        if current = dsl.dependencies.find { |d| d.name == name }
           puts "removing: #{current}"
           dsl.dependencies.delete(current)
         end
