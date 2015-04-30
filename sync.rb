@@ -9,6 +9,8 @@ module Celluloid
     when 'bundler', 'rspec'
       puts "Synchronizing Celluloid Culture //"
       `cd #{GEM_PATH}/culture; git pull origin master`
+    else
+      puts "different: #{File.basename($0)}"
     end
 
     require("#{GEM_PATH}/culture/gems/loader")
