@@ -2,7 +2,7 @@ module Bundler
   class Dependency
 
     def requirements
-      @requirements
+      @requirement
     end
 
   end
