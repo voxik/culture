@@ -49,6 +49,7 @@ module Celluloid
     end
 
     def gemfile(dsl)
+      puts "deps: #{dsl.dependencies}"
       loader do |name, spec|
         req = spec["bundler"] || {}
         req = req.each_with_object({}) { |(k, v), o| o[k.to_sym] = v }
