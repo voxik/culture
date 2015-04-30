@@ -3,10 +3,6 @@ module Celluloid
     GEM_PATH ||= File.expand_path("../../", __FILE__)
     $LOAD_PATH.push(GEM_PATH)
 
-    celluloid = File.expand_path('../celluloid/celluloid.gemspec', GEM_PATH)
-    if File.exist? celluloid
-      $LOAD_PATH.push(File.expand_path( '../lib/', celluloid))
-    end
     # TODO: This will likely need to be done differently if INSIDE a cut gem.
 
     puts "Synchronizing Celluloid Culture //"
