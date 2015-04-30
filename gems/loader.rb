@@ -51,20 +51,15 @@ module Celluloid
 
     def gemfile(dsl)
       loader do |name, spec|
-        keep = false
         version = spec["version"] ||= ">= 0"
         params = [ name, version ]
         req = spec["bundler"] || {}
         params << req.each_with_object({}) { |(k, v), o| o[k.to_sym] = v }
         if current = dsl.dependencies.find { |d| d.name == name }
-          unless current.requirement =~ Gem::Version.create(version.split(" ").last)
-            dsl.dependencies.delete(current)
-            keep = true
-          end
-        else
-          keep = true
+          puts "#{current.requirement =~ Gem::Version.create(version.split(" ").last)}"
+          dsl.dependencies.delete(current)
         end
-        dsl.gem(*params) if keep
+        dsl.gem(*params)
         current = dsl.dependencies.find { |d| d.name == name }
         puts "added: #{current}"
       end
