@@ -5,11 +5,11 @@ coveralls:
     require: false
 
 celluloid:
+  version: "~> 0.17.0.pre7"
   gemfile:
     github: celluloid/celluloid
     branch: 0.17.0-prerelease
   gemspec:
-    - "~> 0.17.0.pre7"
 
 celluloid-supervision:
   gemfile:
@@ -32,8 +32,8 @@ celluloid-extras:
     branch: master
 
 timers:
+  version: "~> 4.0.0"
   gemspec:
-     - "~> 4.0.0"
   gemfile:
     github: celluloid/timers
 

@@ -9,6 +9,7 @@ module Celluloid
     `cd #{GEM_PATH}/culture; git pull origin master`
 
     require("#{GEM_PATH}/culture/gems/loader")
+    require("#{GEM_PATH}/culture/lib/alterations")
 
     GEM = Celluloid::Gems::SELF unless defined? GEM
     LIB_PATH = File.expand_path("../../lib", __FILE__)
