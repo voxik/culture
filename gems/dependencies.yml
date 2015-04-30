@@ -9,11 +9,8 @@ celluloid:
     github: celluloid/celluloid
     branch: 0.17.0-prerelease
   gemspec:
-    - ~> 0.17.0.pre0
-
-celluloid-extras:
-  gemfile:
-    github: celluloid/celluloid-extras
+    - >= 0.17.0.pre0
+  dependency: runtime
 
 celluloid-supervision:
   gemfile:
@@ -26,6 +23,10 @@ celluloid-pool:
 celluloid-fsm:
   gemfile:
     github: celluloid/celluloid-fsm
+
+celluloid-extras:
+  gemfile:
+    github: celluloid/celluloid-extras
 
 timers:
   gemspec:
