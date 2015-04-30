@@ -9,7 +9,7 @@ celluloid:
     github: celluloid/celluloid
     branch: 0.17.0-prerelease
   gemspec:
-    - >= 0.17.0.pre0
+    - ">= 0.17.0.pre0"
   dependency: runtime
 
 celluloid-supervision:
@@ -30,7 +30,7 @@ celluloid-extras:
 
 timers:
   gemspec:
-     - ~> 4.0.0
+     - "~> 4.0.0"
   gemfile:
     github: celluloid/timers
 
