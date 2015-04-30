@@ -1,22 +1,39 @@
+bundler:
+
+coveralls:
+  gemfile:
+    require: false
+
 celluloid:
-  bundler:
+  gemfile:
     github: celluloid/celluloid
     branch: 0.17.0-prerelease
+
 celluloid-extras:
-  bundler:
+  gemfile:
     github: celluloid/celluloid-extras
+
 celluloid-supervision:
-  bundler:
+  gemfile:
     github: celluloid/celluloid-supervision
+
 celluloid-pool:
-  bundler:
+  gemfile:
     github: celluloid/celluloid-pool
+
 celluloid-fsm:
-  bundler:
+  gemfile:
     github: celluloid/celluloid-fsm
+
 timers:
   gemspec:
      - ~> 4.0.0
-  bundler:
+  gemfile:
     github: celluloid/timers
+
 rubocop:
+
+rspec-log_split:
+  gemfile:
+    github: "abstractive/rspec-log_split"
+    branch: "master"
