@@ -48,7 +48,14 @@ module Celluloid
     def gemspec(gem)
       loader do |name, spec|
         req = spec["gemspec"] || []
-        gem.add_development_dependency(name, *req)
+        case spec["dependency"]
+        when "runtime"
+          gem.add_runtime_dependency(name, *req)
+        when "development"
+          gem.add_development_dependency(name, *req)
+        else
+          gem.add_dependency(name, *req)
+        end
       end
     end
 
