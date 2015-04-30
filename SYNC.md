@@ -10,6 +10,8 @@ require File.expand_path("../culture/sync", __FILE__)
 
 ## So what does it do?
 
+#### It adds the gem you're in to the `$LOADPATH`.
+
 #### It tries to find the `VERSION` constant for the current gem and load it.
 
 This allows easy inclusion of `VERSION` in gemspec, without individually including the required file first.
