@@ -5,8 +5,8 @@ module Celluloid
 
     # TODO: This will likely need to be done differently if INSIDE a cut gem.
 
-    case File.basename($0)
-    when 'bundle', 'rspec'
+    case File.basename($PROGRAM_NAME)
+    when "bundle", "rspec"
       puts "Synchronizing Celluloid Culture //"
       `cd #{GEM_PATH}/culture; git pull origin master`
     end
