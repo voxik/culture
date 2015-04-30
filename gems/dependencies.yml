@@ -9,7 +9,7 @@ celluloid:
     github: celluloid/celluloid
     branch: 0.17.0-prerelease
   gemspec:
-    - "0.17.0.pre7"
+    - "~> 0.17.0.pre7"
 
 celluloid-supervision:
   gemfile:
@@ -43,3 +43,4 @@ rspec-log_split:
   gemfile:
     github: "abstractive/rspec-log_split"
     branch: "master"
+    require: false
