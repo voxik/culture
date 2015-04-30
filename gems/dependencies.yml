@@ -26,6 +26,11 @@ celluloid-fsm:
     github: celluloid/celluloid-fsm
     branch: master
 
+# celluloid-extras:
+#   gemfile:
+#     github: celluloid/celluloid-extras
+#     branch: master
+
 timers:
   version: "~> 4.0.0"
   gemspec:
