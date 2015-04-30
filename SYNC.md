@@ -8,6 +8,12 @@ The `celluloid/culture` sub-module needs to be updated in ever repository which 
 require File.expand_path("../culture/sync", __FILE__)
 ```
 
+## When all is said and done...
+
+Running `bundle` or `rspec` will trigger `Celluloid::Sync` automatically, without slowing you down.
+
+---
+
 ## So what does it do?
 
 #### It adds the gem you're in to the `$LOADPATH`.
