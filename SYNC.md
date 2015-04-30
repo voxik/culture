@@ -37,7 +37,7 @@ require File.expand_path("../culture/sync", __FILE__)
 ```
 
 
-#### Finishing of `gemspec` ...
+#### Finishing off `gemspec` ...
 
 You only have one other line to add, other than line above ... right before the closing `end` in the file:
 
@@ -54,7 +54,7 @@ end
 
 ```
 
-#### Finishing of `Gemfile` ...
+#### Finishing off `Gemfile` ...
 
 Same as in `gemspec` you have only two bits to add. The second line we're adding goes at the very end, or at least after `gemspec` is called:
 
