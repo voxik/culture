@@ -14,18 +14,22 @@ celluloid:
 celluloid-supervision:
   gemfile:
     github: celluloid/celluloid-supervision
+    branch: master
 
 celluloid-pool:
   gemfile:
     github: celluloid/celluloid-pool
+    branch: master
 
 celluloid-fsm:
   gemfile:
     github: celluloid/celluloid-fsm
+    branch: master
 
 celluloid-extras:
   gemfile:
     github: celluloid/celluloid-extras
+    branch: master
 
 timers:
   gemspec:
