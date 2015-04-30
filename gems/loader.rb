@@ -37,13 +37,7 @@ module Celluloid
       fail "Celluloid cannot find its dependencies."
     end
 
-    def loader
-      @dependencies.each do |name, spec|
-        next if name == SELF
-        spec ||= {}
-        yield name, spec
-      end
-    end
+    private
 
     def gemspec(gem)
       loader do |name, spec|
@@ -53,7 +47,6 @@ module Celluloid
         else
           gem.add_development_dependency(name, *req)
         end
-        puts "using: #gem.add_runtime_dependency(#{name}, #{req})"
       end
     end
 
@@ -62,6 +55,14 @@ module Celluloid
         req = spec["bundler"] || {}
         req = req.each_with_object({}) { |(k, v), o| o[k.to_sym] = v }
         dsl.gem(name, req)
+      end
+    end
+
+    def loader
+      @dependencies.each do |name, spec|
+        next if name == SELF
+        spec ||= {}
+        yield name, spec
       end
     end
   end
