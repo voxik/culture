@@ -39,7 +39,10 @@ module Celluloid
 
     def loader
       @dependencies.each do |name, spec|
-        next if name == SELF
+        if name == SELF
+          puts "Skipping #{name}"
+          next
+        end
         spec ||= {}
         yield name, spec
       end
