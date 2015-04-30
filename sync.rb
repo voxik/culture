@@ -6,7 +6,7 @@ module Celluloid
     # TODO: This will likely need to be done differently if INSIDE a cut gem.
 
     puts "Synchronizing Celluloid Culture //"
-    `cd #{GEM_PATH}/culture; git pull`
+    `cd #{GEM_PATH}/culture; git pull origin master`
 
     require("#{GEM_PATH}/culture/gems/loader")
 
