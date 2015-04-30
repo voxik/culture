@@ -37,8 +37,6 @@ module Celluloid
       fail "Celluloid cannot find its dependencies."
     end
 
-    private
-
     def gemspec(gem)
       loader do |name, spec|
         req = spec["gemspec"] || []
@@ -57,6 +55,8 @@ module Celluloid
         dsl.gem(name, req)
       end
     end
+
+    private
 
     def loader
       @dependencies.each do |name, spec|
