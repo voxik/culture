@@ -39,10 +39,7 @@ module Celluloid
 
     def loader
       @dependencies.each do |name, spec|
-        if name == SELF
-          puts "Skipping #{name}"
-          next
-        end
+        next if name == SELF
         spec ||= {}
         yield name, spec
       end
@@ -56,6 +53,7 @@ module Celluloid
         else
           gem.add_development_dependency(name, *req)
         end
+        puts "using: #{[name, *req]}"
       end
     end
 
