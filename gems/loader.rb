@@ -56,7 +56,7 @@ module Celluloid
         req = spec["bundler"] || {}
         params << req.each_with_object({}) { |(k, v), o| o[k.to_sym] = v }
         if current = dsl.dependencies.find { |d| d.name == name }
-          puts "#{current.requirements =~ Gem::Version.create(version.split(" ").last)}"
+          puts "#{current.requirement =~ Gem::Version.create(version.split(" ").last)}"
           dsl.dependencies.delete(current)
         end
         dsl.gem(*params)
