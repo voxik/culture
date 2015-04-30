@@ -8,6 +8,8 @@ celluloid:
   gemfile:
     github: celluloid/celluloid
     branch: 0.17.0-prerelease
+  gemspec:
+    - ~> 0.17.0.pre0
 
 celluloid-extras:
   gemfile:
