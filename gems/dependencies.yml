@@ -9,7 +9,7 @@ celluloid:
     github: celluloid/celluloid
     branch: 0.17.0-prerelease
   gemspec:
-    - ">= 0.17.0.pre0"
+    - ">= 0.17.0.pre7"
 
 celluloid-supervision:
   gemfile:
