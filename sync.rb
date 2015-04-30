@@ -6,11 +6,9 @@ module Celluloid
     # TODO: This will likely need to be done differently if INSIDE a cut gem.
 
     case File.basename($0)
-    when 'bundler', 'rspec'
+    when 'bundle', 'rspec'
       puts "Synchronizing Celluloid Culture //"
       `cd #{GEM_PATH}/culture; git pull origin master`
-    else
-      puts "different: #{File.basename($0)}"
     end
 
     require("#{GEM_PATH}/culture/gems/loader")
