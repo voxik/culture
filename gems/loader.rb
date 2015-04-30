@@ -54,8 +54,7 @@ module Celluloid
         version = spec["version"] ||= ">= 0"
         params = [ name, version ]
         req = spec["bundler"] || {}
-        req = req.each_with_object({}) { |(k, v), o| o[k.to_sym] = v }
-        params += [ spec["version"], req ]
+        params << req.each_with_object({}) { |(k, v), o| o[k.to_sym] = v }
         if current = dsl.dependencies.find { |d| d.name == name }
           puts "#{current.requirements > version}"
           dsl.dependencies.delete(current)
