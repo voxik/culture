@@ -10,6 +10,7 @@ celluloid:
     branch: 0.17.0-prerelease
   gemspec:
     - "~> 0.17.0.pre7"
+  dependency: runtime
 
 celluloid-supervision:
   gemfile:
