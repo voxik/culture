@@ -1,5 +1,9 @@
 module Bundler
   class Dependency
-    attr_accessor :requirements
+
+    def requirements
+      @requirements
+    end
+
   end
 end
