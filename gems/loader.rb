@@ -61,7 +61,7 @@ module Celluloid
         end
         dsl.gem(*params)
         current = dsl.dependencies.find { |d| d.name == name }
-        puts "added: #{current}"
+        puts "added: #{Gem::Version.create(version.split(" ").last}"
       end
     end
 
