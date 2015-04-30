@@ -9,7 +9,7 @@ Celluloid::Culture
 
 
 ## Integration
-To add `celluloid/culture` and its many splendors to a gem, install it as a sub-module of the gem repository. Once you fully integrate `[Celluloid::Sync](SYNC.md)`, the sub-module will be automatically refreshed.
+To add `celluloid/culture` and its many splendors to a gem, install it as a sub-module of the gem repository. Once you fully integrate [`Celluloid::Sync`](SYNC.md), the sub-module will be automatically refreshed.
 
 ##### Add celluloid/culture as GIT submodule:
 ```sh
