@@ -11,6 +11,11 @@ celluloid:
     branch: 0.17.0-prerelease
   gemspec:
 
+celluloid-essentials:
+  gemfile:
+    github: celluloid/celluloid-essentials
+    branch: master
+
 celluloid-supervision:
   gemfile:
     github: celluloid/celluloid-supervision
