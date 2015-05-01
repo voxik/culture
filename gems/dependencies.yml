@@ -9,32 +9,38 @@ celluloid:
   gemfile:
     github: celluloid/celluloid
     branch: 0.17.0-prerelease
+    submodules: true
   gemspec:
 
 celluloid-essentials:
   gemfile:
     github: celluloid/celluloid-essentials
     branch: master
+    submodules: true
 
 celluloid-supervision:
   gemfile:
     github: celluloid/celluloid-supervision
     branch: master
+    submodules: true
 
 celluloid-pool:
   gemfile:
     github: celluloid/celluloid-pool
     branch: master
+    submodules: true
 
 celluloid-fsm:
   gemfile:
     github: celluloid/celluloid-fsm
     branch: master
+    submodules: true
 
 celluloid-extras:
   gemfile:
     github: celluloid/celluloid-extras
     branch: master
+    submodules: true
 
 timers:
   version: "~> 4.0.0"
