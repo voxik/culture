@@ -7,7 +7,7 @@ module Celluloid
 
     case File.basename($PROGRAM_NAME)
     when "bundle", "rspec"
-      puts "Synchronizing Celluloid Culture //"
+      puts "Celluloid::Sync //"
       `cd #{GEM_PATH}/culture; git pull origin master`
     end
 
