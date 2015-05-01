@@ -17,8 +17,6 @@ module Celluloid
     LIB_PATH = File.expand_path("../../lib", __FILE__)
     LIB_GEMPATH = "#{LIB_PATH}/#{GEM.split('-').join('/')}"
     $LOAD_PATH.push(LIB_PATH)
-    
-    puts "version file? #{LIB_GEMPATH}/version.rb"
 
     if File.exist?(version = "#{LIB_GEMPATH}/version.rb")
       require(version)
