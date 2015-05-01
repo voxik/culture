@@ -14,6 +14,7 @@ module Celluloid
   module Gems
     extend self
 
+    puts Dir["#{File.expand_path("../../../", __FILE__)}/*.gemspec"].first.gsub(".gemspec")
     SELF = Dir["#{File.expand_path("../../../", __FILE__)}/*.gemspec"].first.gsub(".gemspec")
     raise "Missing gemspec." unless SELF
     GEMS = File.expand_path("../dependencies.yml", __FILE__)
