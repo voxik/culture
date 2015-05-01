@@ -14,9 +14,6 @@ module Celluloid
   module Gems
     extend self
 
-    SELF = Dir["#{File.expand_path('../../../', __FILE__)}/*.gemspec"].first.gsub(".gemspec", "").split("/").last
-    fail "Missing gemspec." unless SELF
-
     GEMS = File.expand_path("../dependencies.yml", __FILE__)
 
     unless @dependencies ||= nil
@@ -54,7 +51,7 @@ module Celluloid
 
     def loader
       @dependencies.each do |name, spec|
-        next if name == SELF
+        next if name == Celluloid::Sync::SELF
         spec ||= {}
         yield name, spec
       end

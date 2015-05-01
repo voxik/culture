@@ -3,6 +3,9 @@ module Celluloid
     GEM_PATH ||= File.expand_path("../../", __FILE__)
     $LOAD_PATH.push(GEM_PATH)
 
+    SELF = Dir["#{File.expand_path('../../', __FILE__)}/*.gemspec"].first.gsub(".gemspec", "").split("/").last
+    fail "Missing gemspec." unless SELF
+
     # TODO: This will likely need to be done differently if INSIDE a cut gem.
 
     case File.basename($PROGRAM_NAME)
@@ -13,9 +16,8 @@ module Celluloid
 
     require("#{GEM_PATH}/culture/gems/loader")
 
-    GEM = Celluloid::Gems::SELF unless defined? GEM
     LIB_PATH = File.expand_path("../../lib", __FILE__)
-    LIB_GEMPATH = "#{LIB_PATH}/#{GEM.split('-').join('/')}"
+    LIB_GEMPATH = "#{LIB_PATH}/#{SELF.split('-').join('/')}"
     $LOAD_PATH.push(LIB_PATH)
 
     puts "#{LIB_GEMPATH}/version.rb"
