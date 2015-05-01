@@ -14,20 +14,10 @@ module Celluloid
   module Gems
     extend self
 
-    # TODO: Better way to do this I'm sure.
-    SELF = begin
-      path = __FILE__.split("/")
-      path.pop(3)
-      path.last
-    end
+    puts "#{File.expand_path("../../../", __FILE__)}/*.gemspec"
 
-    GEMS = begin
-      path = File.expand_path(__FILE__).split("/")
-      path.pop
-      path.push("dependencies.yml")
-      path.join("/")
-    end
-    # /TODO
+    SELF = Dir["#{File.expand_path("../../../", __FILE__)}/*.gemspec"].first.sub(".gemspec")
+    GEMS = File.expand_path("../dependencies.yml", __FILE__)
 
     unless @dependencies ||= nil
       @dependencies = YAML.load_file(GEMS) if File.exist?(GEMS)
