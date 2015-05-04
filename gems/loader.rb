@@ -28,6 +28,7 @@ module Celluloid
     end
 
     def core?
+      return false unless @dependencies["#{Celluloid::Sync.gem_name}"].is_a? Hash
       @dependencies["#{Celluloid::Sync.gem_name}"]["dependency"] == 'core'
     end
 
