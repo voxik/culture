@@ -1,4 +1,5 @@
 bundler:
+  dependency: runtime
 
 rubocop:
 
@@ -7,6 +8,7 @@ coveralls:
     require: false
 
 celluloid:
+  dependency: runtime
   version: ">= 0.17.0.pre7"
   gemfile:
     github: celluloid/celluloid
@@ -15,42 +17,49 @@ celluloid:
   gemspec:
 
 celluloid-essentials:
+  dependency: runtime
   gemfile:
     github: celluloid/celluloid-essentials
     branch: master
     submodules: true
 
 celluloid-supervision:
+  dependency: runtime
   gemfile:
     github: celluloid/celluloid-supervision
     branch: master
     submodules: true
 
 celluloid-pool:
+  dependency: runtime
   gemfile:
     github: celluloid/celluloid-pool
     branch: master
     submodules: true
 
 celluloid-fsm:
+  dependency: runtime
   gemfile:
     github: celluloid/celluloid-fsm
     branch: master
     submodules: true
 
 celluloid-extras:
+  dependency: runtime
   gemfile:
     github: celluloid/celluloid-extras
     branch: master
     submodules: true
 
 timers:
+  dependency: runtime
   version: "~> 4.0.0"
   gemspec:
   gemfile:
     github: celluloid/timers
 
 rspec-logsplit:
+  dependency: runtime
   version: ">= 0.1.2"
   gemfile:
     github: "abstractive/rspec-logsplit"
