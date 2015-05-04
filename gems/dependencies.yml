@@ -1,5 +1,7 @@
 bundler:
 
+rubocop:
+
 coveralls:
   gemfile:
     require: false
@@ -48,10 +50,9 @@ timers:
   gemfile:
     github: celluloid/timers
 
-rubocop:
-
 rspec-log_split:
+  version: "~> 0.1.2"
   gemfile:
-    github: "abstractive/rspec-log_split"
+    github: "abstractive/rspec-logsplit"
     branch: "master"
     require: false
