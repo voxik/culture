@@ -21,6 +21,12 @@ module Celluloid
       def lib_gempath
         "#{lib_path}/#{gem_name.split('-').join('/')}"
       end
+      def scenario
+        File.basename($PROGRAM_NAME)
+      end
+      def bundler?
+        scenario == "bundle"
+      end
     end
 
     fail "Missing gemspec." unless gem_name?
@@ -28,11 +34,10 @@ module Celluloid
     $LOAD_PATH.push(lib_path)
 
     # TODO: This will likely need to be done differently if INSIDE a cut gem.
-
-    case File.basename($PROGRAM_NAME)
+    case scenario
     when "bundle"
       if ARGV.first == "update"
-        puts "Celluloid::Sync // Gem: #{gem_name}"
+        puts "Celluloid::Sync // Gem: #{gem_name} (#{(Gems.core?) ? "C" : "M"})"
         `cd #{gem_path}/culture; git pull origin master`
       end
     end
