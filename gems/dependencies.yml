@@ -51,7 +51,8 @@ timers:
     github: celluloid/timers
 
 rspec-log_split:
+  version: "~> 0.1.2"
   gemfile:
-    github: "abstractive/rspec-log_split"
+    github: "abstractive/rspec-logsplit"
     branch: "master"
     require: false
