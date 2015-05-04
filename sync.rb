@@ -27,7 +27,6 @@ module Celluloid
     $LOAD_PATH.push(gem_path)
     $LOAD_PATH.push(lib_path)
 
-
     # TODO: This will likely need to be done differently if INSIDE a cut gem.
 
     case File.basename($PROGRAM_NAME)
