@@ -1,6 +1,5 @@
 module Celluloid
   module Sync
-
     class << self
       undef gem_path rescue nil
       def gem_path
