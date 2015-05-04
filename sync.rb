@@ -1,6 +1,5 @@
 module Celluloid
   module Sync
-
     class << self
       undef gem_path rescue nil
       def gem_path
@@ -28,12 +27,11 @@ module Celluloid
     $LOAD_PATH.push(gem_path)
     $LOAD_PATH.push(lib_path)
 
-
     # TODO: This will likely need to be done differently if INSIDE a cut gem.
 
     case File.basename($PROGRAM_NAME)
     when "bundle"
-      if ARGV.first == 'update'
+      if ARGV.first == "update"
         puts "Celluloid::Sync // Gem: #{gem_name}"
         `cd #{gem_path}/culture; git pull origin master`
       end
