@@ -40,7 +40,7 @@ module Celluloid
 
     def gemfile(dsl)
       loader do |name, spec|
-        version = spec["version"] ||= "~> 0"
+        version = spec["version"] ||= ">= 0"
         params = [name, version]
         req = spec["bundler"] || {}
         params << req.each_with_object({}) { |(k, v), o| o[k.to_sym] = v }
