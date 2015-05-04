@@ -14,10 +14,13 @@ module Celluloid
   module Gems
     extend self
 
-    GEMS = File.expand_path("../dependencies.yml", __FILE__)
+    undef gems rescue nil
+    def gems
+      File.expand_path("../dependencies.yml", __FILE__)
+    end
 
     unless @dependencies ||= nil
-      @dependencies = YAML.load_file(GEMS) if File.exist?(GEMS)
+      @dependencies = YAML.load_file(gems) if File.exist?(gems)
     end
 
     unless @dependencies.is_a?(Hash) && @dependencies.any?
@@ -51,7 +54,7 @@ module Celluloid
 
     def loader
       @dependencies.each do |name, spec|
-        next if name == Celluloid::Sync::SELF
+        next if name == Celluloid::Sync.gem_name
         spec ||= {}
         yield name, spec
       end
