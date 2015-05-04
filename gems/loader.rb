@@ -27,13 +27,21 @@ module Celluloid
       fail "Celluloid cannot find its dependencies."
     end
 
+    def core?
+      @dependencies["#{Celluloid::Sync.gem_name}"]["dependency"] == 'core'
+    end
+
     def gemspec(gem)
       loader do |name, spec|
         req = spec["gemspec"] || []
-        if spec["dependency"] == "runtime"
-          gem.add_runtime_dependency(name, *req)
+        if ["core", "module"].include?(spec["dependency"]) 
+          if core?
+            gem.add_runtime_dependency(name, *req)
+          else
+            gem.add_development_dependency(name, *req)
+          end
         else
-          gem.add_development_dependency(name, *req)
+          gem.add_dependency(name, *req)
         end
       end
     end
