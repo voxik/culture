@@ -1,6 +1,7 @@
 bundler:
 
 rubocop:
+  dependency: development
 
 coveralls:
   gemfile:
