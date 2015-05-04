@@ -33,9 +33,10 @@ module Celluloid
 
     case File.basename($PROGRAM_NAME)
     when "bundle"
-      puts ARGV
-      puts "Celluloid::Sync //"
-      `cd #{gem_path}/culture; git pull origin master`
+      if ARGV.first == 'update'
+        puts "Celluloid::Sync //"
+        `cd #{gem_path}/culture; git pull origin master`
+      end
     end
 
     require("#{gem_path}/culture/gems/loader")
