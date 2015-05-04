@@ -31,7 +31,7 @@ module Celluloid
       loader do |name, spec|
         req = spec["gemspec"] || []
         if spec["dependency"] == "runtime"
-          gem.add_dependency(name, *req)
+          gem.add_runtime_dependency(name, *req)
         else
           gem.add_development_dependency(name, *req)
         end
