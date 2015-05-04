@@ -41,6 +41,8 @@ module Celluloid
           else
             gem.add_development_dependency(name, *req)
           end
+        elsif spec["dependency"] == 'development'
+          gem.add_development_dependency(name, *req)
         else
           gem.add_dependency(name, *req)
         end
