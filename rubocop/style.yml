@@ -40,3 +40,7 @@ Style/SpaceInsideHashLiteralBraces:
 
 Style/EmptyLinesAroundAccessModifier:
   Enabled: false
+  
+Style/RescueModifier:
+  Enabled: false
+  
