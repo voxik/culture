@@ -36,10 +36,8 @@ module Celluloid
         req = spec["gemspec"] || []
         if ["core", "module"].include?(spec["dependency"]) 
           if core?
-            puts "core dependency: all are runtime: #{name}"
             gem.add_runtime_dependency(name, *req)
           else
-            puts "module dependency: all are development: #{name}"
             gem.add_development_dependency(name, *req)
           end
         else
