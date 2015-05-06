@@ -52,8 +52,10 @@ module Celluloid
         meth = case spec["dependency"]
                when "core", "module"
                  # For the core gem, all modules are runtime dependencies.
-                 # For external gems, only the core gem is a runtime dependency.
-                 if core? || (separate?(name) && core?(name))
+                 # For separate gems, only the core gem is a runtime dependency.
+                 if separate? && core?(name)
+                   :add_runtime_dependency
+                 elsif core?
                    :add_runtime_dependency
                  else
                    :add_development_dependency
