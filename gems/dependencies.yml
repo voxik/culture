@@ -26,9 +26,6 @@ celluloid-essentials:
     branch: master
     submodules: true
 
-celluloid-supervision:
-  dependency: module
-
 celluloid-pool:
   dependency: module
   gemfile:
