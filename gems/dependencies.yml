@@ -63,3 +63,6 @@ rspec-logsplit:
     github: "abstractive/rspec-logsplit"
     branch: "master"
     require: false
+
+rspec:
+  dependency: development
