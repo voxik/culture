@@ -35,7 +35,6 @@ module Celluloid
     end
 
     def separate?
-      puts "separate?"
       @dependencies.keys.include?(gem_name)
     end
 
@@ -54,6 +53,7 @@ module Celluloid
        puts "core? #{core?}"
        puts "core?(#{name}) #{core?(name)}"
        puts "spec['dependency'] #{spec["dependency"]}"
+       puts "---"
                  
         meth = case spec["dependency"]
                when "core", "module"
