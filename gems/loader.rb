@@ -29,7 +29,7 @@ module Celluloid
 
     def core?(name=Celluloid::Sync.gem_name)
       return false unless @dependencies["#{Celluloid::Sync.gem_name}"].is_a? Hash
-      @dependencies["#{name}"]["dependency"] == 'core'
+      @dependencies["#{name}"]["dependency"] == "core"
     end
 
     def needs_core?(name)
@@ -40,13 +40,13 @@ module Celluloid
     def gemspec(gem)
       loader do |name, spec|
         req = spec["gemspec"] || []
-        if ["core", "module"].include?(spec["dependency"]) 
+        if %w(core module).include?(spec["dependency"])
           if core? || needs_core?(name)
             gem.add_runtime_dependency(name, *req)
           else
             gem.add_development_dependency(name, *req)
           end
-        elsif spec["dependency"] == 'development'
+        elsif spec["dependency"] == "development"
           gem.add_development_dependency(name, *req)
         else
           gem.add_dependency(name, *req)
