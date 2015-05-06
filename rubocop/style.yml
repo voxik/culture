@@ -22,7 +22,7 @@ Style/SpaceAroundEqualsInParameterDefault:
 
 Style/SpaceInsideBlockBraces:
   Enabled: false
-  
+
 Style/AccessModifierIndentation:
   Enabled: false
 
@@ -39,4 +39,10 @@ Style/SpaceInsideHashLiteralBraces:
   EnforcedStyle: no_space
 
 Style/EmptyLinesAroundAccessModifier:
+  Enabled: false
+
+Style/RescueModifier:
+  Enabled: false
+
+Style/GlobalVars:
   Enabled: false
