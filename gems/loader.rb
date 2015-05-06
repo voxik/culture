@@ -70,7 +70,7 @@ module Celluloid
       loader do |name, spec|
         version = spec["version"] ||= ">= 0"
         params = [name, version]
-        req = spec["bundler"] || {}
+        req = spec["gemfile"] || {}
         params << req.each_with_object({}) { |(k, v), o| o[k.to_sym] = v }
         current = dsl.dependencies.find { |d| d.name == name }
         dsl.dependencies.delete(current) if current
