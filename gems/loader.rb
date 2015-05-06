@@ -29,32 +29,31 @@ module Celluloid
       fail "Celluloid cannot find its dependencies."
     end
 
-    def core_gem?(name=gem_name)
+    def core?(name=gem_name)
+      return false if separate?
       return false unless @dependencies[gem_name].is_a? Hash
-      @dependencies["#{name}"]["dependency"] == "core"
+      @dependencies[name]["dependency"] == "core"
     end
 
-    # Returns true if this gem is *not* in the dependencies list at all,
-    # and the name of the gem passed in *is* the core gem.
-    def needs_core?(name)
-      return false if @dependencies.keys.include?(gem_name)
-      core_gem?(name)
+    def separate?(name)
+      @dependencies.keys.include?(gem_name)
     end
 
     def gemspec(gem)
       loader do |name, spec|
         req = spec["gemspec"] || []
         # Rules for dependencies, to avoid so-called circular dependency:
-        # - Only the core gem lists all the modules as runtime depedencies.
+        # - Only the core gem lists all the modules as runtime dependencies.
         # - If this gem is not in the dependencies list, then it needs the core gem at runtime;
-        #   the module gems are development dependencies only.
+        #   the module gems are development dependencies only. This is a depending separate gem.
+        #   There is the core gem, module gems, true dependencies, and separately depending gems.
         # - If the dependency is a module, it is only a development dependency to other modules,
         #   and even the core gem is a development dependency. It is not expected to be used alone.
         meth = case spec["dependency"]
                when "core", "module"
                  # For the core gem, all modules are runtime dependencies.
                  # For external gems, only the core gem is a runtime dependency.
-                 if core_gem? || needs_core?(name)
+                 if core? || (separate?(name) && core?(name))
                    :add_runtime_dependency
                  else
                    :add_development_dependency
