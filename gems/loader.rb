@@ -68,8 +68,7 @@ module Celluloid
 
     def gemfile(dsl)
       loader do |name, spec|
-        version = spec["version"] ||= ">= 0"
-        params = [name, version]
+        params = [name, spec["version"] || ">= 0"]
         req = spec["gemfile"] || {}
         params << req.each_with_object({}) { |(k, v), o| o[k.to_sym] = v }
         current = dsl.dependencies.find { |d| d.name == name }
