@@ -47,7 +47,7 @@ module Celluloid
         #   the module gems are development dependencies only. This is a depending separate gem.
         #   There is the core gem, module gems, true dependencies, and separately depending gems.
         # - If the dependency is a module, it is only a development dependency to other modules,
-        #   and even the core gem is a development dependency. It is not expected to be used alone.  
+        #   and even the core gem is a development dependency. It is not expected to be used alone.
         meth = case spec["dependency"]
                when "core", "module"
                  # For the core gem, all modules are runtime dependencies.
