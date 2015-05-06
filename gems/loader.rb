@@ -35,7 +35,7 @@ module Celluloid
       @dependencies[name]["dependency"] == "core"
     end
 
-    def separate?(name)
+    def separate?
       @dependencies.keys.include?(gem_name)
     end
 
