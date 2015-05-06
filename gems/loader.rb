@@ -53,9 +53,7 @@ module Celluloid
                when "core", "module"
                  # For the core gem, all modules are runtime dependencies.
                  # For separate gems, only the core gem is a runtime dependency.
-                 if separate? && core?(name)
-                   :add_runtime_dependency
-                 elsif core?
+                 if (separate? && core?(name)) || core?
                    :add_runtime_dependency
                  else
                    :add_development_dependency
