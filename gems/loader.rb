@@ -30,8 +30,7 @@ module Celluloid
     end
 
     def core?(name=gem_name)
-      return false if separate?
-      return false unless @dependencies[gem_name].is_a? Hash
+      return false unless @dependencies[name].is_a? Hash
       @dependencies[name]["dependency"] == "core"
     end
 
