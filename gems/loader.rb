@@ -35,7 +35,7 @@ module Celluloid
     end
 
     def separate?
-      @dependencies.keys.include?(gem_name)
+      !@dependencies.keys.include?(gem_name)
     end
 
     def gemspec(gem)
