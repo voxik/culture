@@ -29,7 +29,9 @@ celluloid-essentials:
 celluloid-supervision:
   dependency: module
   gemfile:
-    path: "~/FOSS/celluverse/celluloid-supervision"
+    github: celluloid/celluloid-supervision
+    branch: master
+    submodules: true
 
 celluloid-pool:
   dependency: module
