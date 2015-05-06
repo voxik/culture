@@ -1,3 +1,5 @@
+require 'forwardable'
+
 module Celluloid
   module Sync
     class << self
