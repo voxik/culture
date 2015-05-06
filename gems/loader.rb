@@ -35,6 +35,7 @@ module Celluloid
     end
 
     def separate?
+      puts "separate?"
       @dependencies.keys.include?(gem_name)
     end
 
@@ -48,6 +49,12 @@ module Celluloid
         #   There is the core gem, module gems, true dependencies, and separately depending gems.
         # - If the dependency is a module, it is only a development dependency to other modules,
         #   and even the core gem is a development dependency. It is not expected to be used alone.
+        
+       puts "separate? #{separate?}"
+       puts "core? #{core?}"
+       puts "core?(#{name}) #{core?(name)}"
+       puts "spec["dependency"] #{spec["dependency"]}"
+                 
         meth = case spec["dependency"]
                when "core", "module"
                  # For the core gem, all modules are runtime dependencies.
