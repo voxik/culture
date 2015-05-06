@@ -53,7 +53,7 @@ module Celluloid
        puts "separate? #{separate?}"
        puts "core? #{core?}"
        puts "core?(#{name}) #{core?(name)}"
-       puts "spec["dependency"] #{spec["dependency"]}"
+       puts "spec['dependency'] #{spec["dependency"]}"
                  
         meth = case spec["dependency"]
                when "core", "module"
