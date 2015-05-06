@@ -1,5 +1,8 @@
 bundler:
 
+benchmark_suite:
+  dependency: development
+
 rubocop:
   dependency: development
 
@@ -29,6 +32,7 @@ celluloid-supervision:
     github: celluloid/celluloid-supervision
     branch: master
     submodules: true
+    path: ~/FOSS/celluverse/celluloid-supervision
 
 celluloid-pool:
   dependency: module
