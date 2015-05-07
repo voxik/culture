@@ -1,7 +1,5 @@
 bundler:
-
 nenv:
-
 dotenv:
 
 benchmark_suite:
@@ -16,6 +14,9 @@ pry:
 rake:
   dependency: development
 
+rspec:
+  dependency: development
+
 coveralls:
   gemfile:
     require: false
@@ -27,7 +28,6 @@ celluloid:
     github: celluloid/celluloid
     branch: 0.17.0-prerelease
     submodules: true
-  gemspec:
 
 celluloid-essentials:
   dependency: module
@@ -66,7 +66,6 @@ celluloid-extras:
 
 timers:
   version: "~> 4.0.0"
-  gemspec:
   gemfile:
     github: celluloid/timers
 
@@ -76,6 +75,3 @@ rspec-logsplit:
     github: "abstractive/rspec-logsplit"
     branch: "master"
     require: false
-
-rspec:
-  dependency: development
