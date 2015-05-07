@@ -2,12 +2,18 @@ require "yaml"
 
 module Celluloid
   module Sync
-    def self.gems(loader)
-      case loader.class.name
-      when "Gem::Specification"
-        Gems.gemspec(loader)
-      when "Bundler::Dsl"
-        Gems.gemfile(loader)
+    module Gemfile
+      class << self
+        def [](dsl)
+          Gems.gemfile(dsl)
+        end
+      end
+    end
+    module Gemspec
+      class << self
+        def [](dsl)
+          Gems.gemspec(dsl)
+        end
       end
     end
   end
@@ -67,6 +73,7 @@ module Celluloid
     end
 
     def gemfile(dsl)
+      dsl.gemspec
       loader do |name, spec|
         params = [name, spec["version"] || ">= 0"]
         req = spec["gemfile"] || {}
