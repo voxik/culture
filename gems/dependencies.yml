@@ -1,9 +1,19 @@
 bundler:
 
+nenv:
+
+dotenv:
+
 benchmark_suite:
   dependency: development
 
 rubocop:
+  dependency: development
+
+pry:
+  dependency: development
+
+rake:
   dependency: development
 
 coveralls:
