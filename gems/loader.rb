@@ -5,14 +5,16 @@ module Celluloid
     module Gemfile
       class << self
         def [](dsl)
+          dsl.source("https://rubygems.org")
+          dsl.gemspec
           Gems.gemfile(dsl)
         end
       end
     end
     module Gemspec
       class << self
-        def [](dsl)
-          Gems.gemspec(dsl)
+        def [](gem)
+          Gems.gemspec(gem)
         end
       end
     end
@@ -73,7 +75,6 @@ module Celluloid
     end
 
     def gemfile(dsl)
-      dsl.gemspec
       loader do |name, spec|
         params = [name, spec["version"] || ">= 0"]
         req = spec["gemfile"] || {}
