@@ -40,6 +40,7 @@ module Celluloid
     def core?(name=gem_name)
       return false unless @dependencies[name].is_a? Hash
       puts "gem? #{name.class} ... #{name} ... #{@dependencies[name]["dependency"]}"
+      puts caller
       @dependencies[name]["dependency"] == "core"
     end
 
