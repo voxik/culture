@@ -21,7 +21,6 @@ module Celluloid
   end
   module Gems
     extend self
-    extend Forwardable
     @gem_name = nil
 
     undef gems rescue nil
