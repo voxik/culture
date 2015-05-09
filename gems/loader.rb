@@ -84,7 +84,6 @@ module Celluloid
         params << req.each_with_object({}) { |(k, v), o| o[k.to_sym] = v }
         current = dsl.dependencies.find { |d| d.name == name }
         dsl.dependencies.delete(current) if current
-        puts "params: #{params}"
         dsl.gem(*params)
       end
     end
