@@ -81,12 +81,12 @@ module Celluloid
     def gemfile(dsl)
       loader do |name, spec|
         version = spec["version"] || ">= 0"
-        puts "version: #{version} ... spec: #{spec}"
         params = [name, version]
         req = spec["gemfile"] || {}
         params << req.each_with_object({}) { |(k, v), o| o[k.to_sym] = v }
         current = dsl.dependencies.find { |d| d.name == name }
         dsl.dependencies.delete(current) if current
+        puts "params: #{params}"
         dsl.gem(*params)
       end
     end
