@@ -93,7 +93,7 @@ module Celluloid
 
     def loader
       @dependencies.each do |name, spec|
-        next if name == gem_name
+        next if name == Sync.gem_name
         spec ||= {}
         yield name, spec
       end
