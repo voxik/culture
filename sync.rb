@@ -44,11 +44,8 @@ module Celluloid
     $LOAD_PATH.push(lib_path)
 
     # TODO: This will likely need to be done differently if INSIDE a cut gem.
-    case scenario
-    when "bundle"
-      if ARGV.first == "update"
-        `cd #{gem_path}/culture; git pull origin master`
-      end
+    if scenario == "bundle"
+      `cd #{gem_path}/culture; git pull origin master` if ARGV.first == "update"
     end
 
     require("#{gem_path}/culture/gems/loader")
