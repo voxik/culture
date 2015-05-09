@@ -47,7 +47,6 @@ module Celluloid
     case scenario
     when "bundle"
       if ARGV.first == "update"
-        puts "Celluloid::Sync // Gem: #{gem_name}"
         `cd #{gem_path}/culture; git pull origin master`
       end
     end
