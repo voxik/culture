@@ -22,7 +22,7 @@ module Celluloid
   module Gems
     extend self
     extend Forwardable
-    def_delegators :"Celluloid::Sync", :gem_name
+    @gem_name = nil
 
     undef gems rescue nil
     def gems
@@ -37,18 +37,21 @@ module Celluloid
       fail "Celluloid cannot find its dependencies."
     end
 
-    def core?(name=gem_name)
+    undef core? rescue nil
+    def core?(name=@gem_name)
       return false unless @dependencies[name].is_a? Hash
       puts "gem? #{name.class} ... #{name} ... #{@dependencies[name]["dependency"]}"
       puts caller
       @dependencies[name]["dependency"] == "core"
     end
 
+    undef separate? rescue nil
     def separate?
-      !@dependencies.keys.include?(gem_name)
+      !@dependencies.keys.include?(@gem_name)
     end
 
     def gemspec(gem)
+      @gem_name = gem.name
       loader do |name, spec|
         req = spec["gemspec"] || []
         # Rules for dependencies, to avoid so-called circular dependency:
