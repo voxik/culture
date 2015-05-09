@@ -39,8 +39,6 @@ module Celluloid
     undef core? rescue nil
     def core?(name=@gem_name)
       return false unless @dependencies[name].is_a? Hash
-      puts "gem? #{name.class} ... #{name} ... #{@dependencies[name]["dependency"]}"
-      puts caller
       @dependencies[name]["dependency"] == "core"
     end
 
@@ -49,6 +47,7 @@ module Celluloid
       !@dependencies.keys.include?(@gem_name)
     end
 
+    undef gemspec rescue nil
     def gemspec(gem)
       @gem_name = gem.name
       loader do |name, spec|
@@ -78,6 +77,7 @@ module Celluloid
       end
     end
 
+    undef gemfile rescue nil
     def gemfile(dsl)
       loader do |name, spec|
         params = [name, spec["version"] || ">= 0"]
