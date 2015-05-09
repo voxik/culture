@@ -18,12 +18,13 @@ rspec:
   dependency: development
 
 coveralls:
+  dependency: development
   gemfile:
     require: false
 
 celluloid:
   dependency: core
-  version: ">= 0.17.0.pre7"
+  version: ">= 0.17.0.pre12"
   gemfile:
     github: celluloid/celluloid
     branch: 0.17.0-prerelease
