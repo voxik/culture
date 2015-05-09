@@ -6,7 +6,7 @@ module Celluloid
       class << self
         def [](dsl)
           dsl.source("https://rubygems.org")
-          dsl.gemspec
+          dsl.gemspec # Runs gemspec, but also @sets gem_name.
           Gems.gemfile(dsl)
         end
       end
@@ -93,7 +93,7 @@ module Celluloid
 
     def loader
       @dependencies.each do |name, spec|
-        next if name == Sync.gem_name
+        next if name == @gem_name
         spec ||= {}
         yield name, spec
       end
