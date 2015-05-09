@@ -51,7 +51,6 @@ module Celluloid
     def gemspec(gem)
       @gem_name = gem.name
       loader do |name, spec|
-        req = spec["gemspec"] || []
         # Rules for dependencies, to avoid so-called circular dependency:
         # - Only the core gem lists all the modules as runtime dependencies.
         # - If this gem is not in the dependencies list, then it needs the core gem at runtime;
@@ -73,15 +72,14 @@ module Celluloid
                else
                  :add_dependency
                end
-        gem.send(meth, name, *req)
+        gem.send(meth, name, spec["version"] || ">= 0")
       end
     end
 
     undef gemfile rescue nil
     def gemfile(dsl)
       loader do |name, spec|
-        version = spec["version"] || ">= 0"
-        params = [name, version]
+        params = [name, spec["version"] || ">= 0"]
         req = spec["gemfile"] || {}
         params << req.each_with_object({}) { |(k, v), o| o[k.to_sym] = v }
         current = dsl.dependencies.find { |d| d.name == name }
