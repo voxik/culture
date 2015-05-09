@@ -39,6 +39,7 @@ module Celluloid
 
     def core?(name=gem_name)
       return false unless @dependencies[name].is_a? Hash
+      puts "gem? #{gem} ... #{@dependencies[name]["dependency"]}"
       @dependencies[name]["dependency"] == "core"
     end
 
@@ -60,7 +61,7 @@ module Celluloid
                when "core", "module"
                  # For the core gem, all modules are runtime dependencies.
                  # For separate gems, only the core gem is a runtime dependency.
-                 if (separate? && core?(name)) || core?
+                 if core? || (separate? && core?(name))
                    :add_runtime_dependency
                  else
                    :add_development_dependency
