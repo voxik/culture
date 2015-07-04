@@ -17,6 +17,9 @@ rake:
 rspec:
   dependency: development
 
+guard-rspec:
+  dependency: development
+
 coveralls:
   dependency: development
   gemfile:
