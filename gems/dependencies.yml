@@ -27,10 +27,10 @@ coveralls:
 
 celluloid:
   dependency: core
-  version: ">= 0.17.0.pre12"
+  version: ">= 0.17.0"
   gemfile:
     github: celluloid/celluloid
-    branch: 0.17.0-prerelease
+    branch: master
     submodules: true
 
 celluloid-essentials:
