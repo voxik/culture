@@ -8,6 +8,9 @@ benchmark_suite:
 rubocop:
   dependency: development
 
+transpec:
+  dependency: development
+
 pry:
   dependency: development
 
