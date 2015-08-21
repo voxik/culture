@@ -30,7 +30,7 @@ coveralls:
 
 celluloid:
   dependency: core
-  version: "~> 0.17"
+  version: ">= 0.17.1.1"
   gemfile:
     github: celluloid/celluloid
     branch: master
