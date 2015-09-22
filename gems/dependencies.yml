@@ -1,6 +1,12 @@
 bundler:
   dependency: development
 
+nenv:
+  dependency: development
+
+dotenv:
+  dependency: development
+
 benchmark_suite:
   dependency: development
 

@@ -46,3 +46,9 @@ Style/RescueModifier:
 
 Style/GlobalVars:
   Enabled: false
+
+Style/FormatString:
+  EnforcedStyle: percent
+
+Style/TrailingUnderscoreVariable:
+  Enabled: false
