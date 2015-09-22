@@ -1,6 +1,11 @@
 bundler:
+  dependency: development
+
 nenv:
+  dependency: development
+
 dotenv:
+  dependency: development
 
 benchmark_suite:
   dependency: development
@@ -77,6 +82,7 @@ timers:
     github: celluloid/timers
 
 rspec-logsplit:
+  dependency: development
   version: ">= 0.1.2"
   gemfile:
     github: "abstractive/rspec-logsplit"
