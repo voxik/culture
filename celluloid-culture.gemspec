@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "celluloid-culture"
-  spec.version       = "0.1.2"
+  spec.version       = "0.2"
   spec.authors       = ["Tony Arcieri", "Donovan Keme"]
   spec.email         = ["bascule@gmail.com", "code@extremist.digital"]
 

@@ -46,6 +46,7 @@ celluloid:
 
 celluloid-essentials:
   dependency: module
+  version: ">= 0.20.5"
   gemfile:
     github: celluloid/celluloid-essentials
     branch: master
@@ -53,6 +54,7 @@ celluloid-essentials:
 
 celluloid-supervision:
   dependency: module
+  version: ">= 0.20.5"
   gemfile:
     github: celluloid/celluloid-supervision
     branch: master
@@ -60,6 +62,7 @@ celluloid-supervision:
 
 celluloid-pool:
   dependency: module
+  version: ">= 0.20.5"
   gemfile:
     github: celluloid/celluloid-pool
     branch: master
@@ -67,6 +70,7 @@ celluloid-pool:
 
 celluloid-fsm:
   dependency: module
+  version: ">= 0.20.5"
   gemfile:
     github: celluloid/celluloid-fsm
     branch: master
@@ -74,6 +78,7 @@ celluloid-fsm:
 
 celluloid-extras:
   dependency: module
+  version: ">= 0.20.5"
   gemfile:
     github: celluloid/celluloid-extras
     branch: master
