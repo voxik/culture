@@ -52,3 +52,6 @@ Style/FormatString:
 
 Style/TrailingUnderscoreVariable:
   Enabled: false
+
+Style/ParallelAssignment:
+  Enabled: false
