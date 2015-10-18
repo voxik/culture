@@ -3,7 +3,7 @@ Celluloid::Culture
 [![Build Status](https://travis-ci.org/celluloid/culture.svg)](https://travis-ci.org/celluloid/culture)
 
 ### Please see...
-* Important [issues for discussion](/celluloid/culture/issues).
+* Important [issues for discussion](https://github.com/celluloid/culture/issues).
 * Information about [Celluloid::Sync](SYNC.md).
 * Information about [RuboCop](rubocop/README.md).
 
