@@ -8,6 +8,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "The culture of Celluloid, in RubyGem form!"
   spec.description   = "In which we try to codify Celluloid's life philosophy as Ruby"
+  spec.licenses      = ["MIT"]
   spec.homepage      = "https://github.com/celluloid/culture"
 
   spec.files        = Dir["README.md", "CHANGES.md", "LICENSE.txt", "lib/**/*", "spec/**/*"]
